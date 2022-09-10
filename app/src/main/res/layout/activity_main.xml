@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/icon_cost_of_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/cost_of_service"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cost_of_service"
+            app:srcCompat="@drawable/ic_cost" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cost_of_service"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:hint="@string/cost_of_service"
+            app:layout_constraintStart_toEndOf="@id/icon_cost_of_service"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cost_of_service_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/serviceQuestion"
+            style="@style/Widget.Tipper.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/serviceQuestion"
+            app:layout_constraintStart_toEndOf="@id/icon_service"
+            app:layout_constraintTop_toBottomOf="@id/cost_of_service" />
+
+        <ImageView
+            android:id="@+id/icon_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/serviceQuestion"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/serviceQuestion"
+            app:srcCompat="@drawable/ic_service" />
+
+        <RadioGroup
+            android:id="@+id/tipOptions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/tipOkay"
+            app:layout_constraintStart_toStartOf="@+id/serviceQuestion"
+            app:layout_constraintTop_toBottomOf="@id/serviceQuestion">
+
+            <RadioButton
+                android:id="@+id/tipAmazing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tipAmazing" />
+
+            <RadioButton
+                android:id="@+id/tipGood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/good_15" />
+
+            <RadioButton
+                android:id="@+id/tipOkay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/okay_10" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnCalculate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:text="@string/Calculate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/roundUpSwitch"
+            app:layout_constraintTop_toBottomOf="@id/roundUpSwitch" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/roundUpSwitch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:checked="true"
+            android:minHeight="48dp"
+            android:text="@string/RoundTip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icon_round_up"
+            app:layout_constraintTop_toBottomOf="@id/tipOptions" />
+
+        <TextView
+            android:id="@+id/resultTip"
+            style="@style/Widget.Tipper.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnCalculate"
+            tools:text="Tip Amount" />
+
+        <ImageView
+            android:id="@+id/icon_round_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/roundUpSwitch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/roundUpSwitch"
+            app:srcCompat="@drawable/ic_round_up" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
